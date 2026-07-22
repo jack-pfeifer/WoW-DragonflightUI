@@ -1130,8 +1130,12 @@ function SubModuleMixin:AddAlternatePowerBar()
         AlternatePowerBar_Initialize(self);
         if DF.API.Version.IsTBC then
             self:InitializeTextStatusBar()
+        elseif self.InitializeTextStatusBar then
+            self:InitializeTextStatusBar()
         else
-            TextStatusBar_Initialize(self);
+            if TextStatusBar_Initialize then
+                TextStatusBar_Initialize(self);
+            end
         end
     end
 
@@ -1180,8 +1184,12 @@ function SubModuleMixin:AddAlternatePowerBar()
     AlternatePowerBar_OnLoad(bar)
     if DF.API.Version.IsTBC then
         bar:InitializeTextStatusBar()
+    elseif bar.InitializeTextStatusBar then
+        bar:InitializeTextStatusBar()
     else
-        TextStatusBar_Initialize(bar);
+        if TextStatusBar_Initialize then
+            TextStatusBar_Initialize(bar);
+        end
     end
 
     bar:SetScript('OnEvent', function(self, event, ...)
