@@ -1198,8 +1198,12 @@ function SubModuleMixin:AddAlternatePowerBar()
 
         if DF.API.Version.IsTBC then
             self:TextStatusBarOnEvent(event, ...);
+        elseif self.TextStatusBarOnEvent then
+            self:TextStatusBarOnEvent(event, ...);
         else
-            TextStatusBar_OnEvent(self, event, ...);
+            if TextStatusBar_OnEvent then
+                TextStatusBar_OnEvent(self, event, ...);
+            end
         end
     end)
     bar:SetScript('OnUpdate', function(self, elapsed)

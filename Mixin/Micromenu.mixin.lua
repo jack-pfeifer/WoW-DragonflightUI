@@ -161,7 +161,7 @@ function DragonflightUIMicroMenuMixin:UpdateLayout(force)
             if v:IsShown() then self.LastChainButton = v end
         else
             v:ClearAllPoints()
-            if self.OriginalAnchors[k] then
+            if self.OriginalAnchors[k] and #self.OriginalAnchors[k] > 0 then
                 v:SetPoint(unpack(self.OriginalAnchors[k]))
             end
         end
