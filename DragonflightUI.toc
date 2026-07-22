@@ -74,7 +74,7 @@ Localization\ruRU.lua
 Localization\zhCN.lua
 
 XML\Includes.xml
-## Bindings.xml
+Bindings.xml
 
 # XML
 XML\Actionbar.xml
@@ -99,7 +99,6 @@ XML\UI.xml
 
 XML\DFColorPicker.xml
 
-## 
 Modules\__Settings.lua
 Compatibility.xml
 Modules\LoadModules.xml
