@@ -442,7 +442,10 @@ function SubModuleMixin:ChangePartyFrame()
     PartyMoveFrame:SetFrameLevel(2)
     self.PartyMoveFrame = PartyMoveFrame
 
-    local sizeX, sizeY = _G['PartyMemberFrame' .. 1]:GetSize()
+    local firstParty = _G['PartyMemberFrame' .. 1]
+    if not firstParty then return end
+    
+    local sizeX, sizeY = firstParty:GetSize()
     local gap = 10;
     PartyMoveFrame:SetSize(sizeX, sizeY * 4 + 3 * gap)
 

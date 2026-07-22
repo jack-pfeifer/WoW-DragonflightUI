@@ -912,7 +912,7 @@ function Module.AddNewCastbar()
     end
 
     if DF.API.Version.IsTBC then
-    elseif Target_Spellbar_AdjustPosition then
+    elseif Target_Spellbar_AdjustPosition and not DF.API.Version.IsSoD then
         hooksecurefunc('Target_Spellbar_AdjustPosition', function(self)
             -- print('Target_Spellbar_AdjustPosition', self:GetName())
             if self.DFCastbar then self.DFCastbar:AdjustPosition() end

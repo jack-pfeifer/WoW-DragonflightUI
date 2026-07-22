@@ -2960,7 +2960,7 @@ function Module.ChangeActionbar()
 
         Module:ForceMoveBlizzEditModeGhosts()
     else
-        if StanceBarLeft then
+        if StanceBarLeft and StanceBarMiddle and StanceBarRight then
             StanceBarLeft:Hide()
             StanceBarMiddle:Hide()
             StanceBarRight:Hide()
